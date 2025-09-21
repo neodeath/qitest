@@ -1,0 +1,351 @@
+/* DynamicTableSheetPage.css - Google Sheets-like styling */
+
+.dynamic-table-sheet {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Header styling */
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sheet-header h3 {
+  margin: 0;
+  color: #202124;
+  font-weight: 500;
+}
+
+/* Container for the table */
+.sheet-container {
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* Table styling to match Google Sheets */
+.sheet-table {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.sheet-table .ant-table {
+  border-radius: 0;
+}
+
+.sheet-table .ant-table-thead > tr > th {
+  background-color: #f8f9fa;
+  color: #5f6368;
+  font-weight: 500;
+  font-size: 12px;
+  border-color: #dadce0;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.sheet-table .ant-table-tbody > tr > td {
+  border-color: #dadce0;
+  padding: 4px 8px;
+  background-color: #ffffff;
+  vertical-align: top;
+  height: 30px;
+  position: relative;
+}
+
+.sheet-table .ant-table-tbody > tr:hover > td {
+  background-color: #f8f9fa;
+}
+
+.sheet-table .ant-table-tbody > tr > td:first-child {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  text-align: center;
+  color: #5f6368;
+  font-size: 12px;
+  border-right: 2px solid #dadce0;
+}
+
+.sheet-table .ant-table-tbody > tr:hover > td:first-child {
+  background-color: #e8f0fe;
+}
+
+/* Column header styling */
+.column-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 20px;
+}
+
+.header-title {
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.header-title:hover {
+  background-color: rgba(26, 115, 232, 0.08);
+}
+
+.column-delete-icon {
+  cursor: pointer;
+  color: #5f6368;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  margin-left: 4px;
+  font-size: 10px;
+}
+
+.column-header:hover .column-delete-icon {
+  opacity: 1;
+}
+
+.column-delete-icon:hover {
+  color: #ea4335;
+}
+
+.header-input {
+  max-width: 100px;
+  text-align: center;
+}
+
+/* Row index and delete styling */
+.row-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.row-delete-icon {
+  cursor: pointer;
+  color: #5f6368;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  font-size: 10px;
+}
+
+.ant-table-tbody > tr:hover .row-delete-icon {
+  opacity: 1;
+}
+
+.row-delete-icon:hover {
+  color: #ea4335;
+}
+
+/* Editable cell styling */
+.cell-display {
+  cursor: text;
+  min-height: 22px;
+  width: 100%;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cell-display:hover {
+  background-color: rgba(26, 115, 232, 0.04);
+  border: 1px solid #1a73e8;
+  margin: -1px;
+}
+
+.cell-display:focus {
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+}
+
+.cell-placeholder {
+  color: #9aa0a6;
+  font-style: italic;
+  user-select: none;
+}
+
+.cell-input {
+  border: 2px solid #1a73e8 !important;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(26, 115, 232, 0.2);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cell-input:focus,
+.cell-input:hover {
+  border-color: #1a73e8 !important;
+  box-shadow: 0 0 0 1px rgba(26, 115, 232, 0.3);
+}
+
+/* Sheet info footer */
+.sheet-info {
+  padding: 12px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+/* Scroll styling */
+.sheet-container .ant-table-body {
+  scrollbar-width: thin;
+  scrollbar-color: #dadce0 #f8f9fa;
+}
+
+.sheet-container .ant-table-body::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.sheet-container .ant-table-body::-webkit-scrollbar-track {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.sheet-container .ant-table-body::-webkit-scrollbar-thumb {
+  background-color: #dadce0;
+  border-radius: 6px;
+  border: 2px solid #f8f9fa;
+}
+
+.sheet-container .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background-color: #bdc1c6;
+}
+
+.sheet-container .ant-table-body::-webkit-scrollbar-corner {
+  background-color: #f8f9fa;
+}
+
+/* Button styling to match Google Sheets */
+.sheet-header .ant-btn {
+  border-radius: 4px;
+  font-size: 12px;
+  height: 32px;
+  font-weight: 500;
+}
+
+.sheet-header .ant-btn-primary {
+  background-color: #1a73e8;
+  border-color: #1a73e8;
+}
+
+.sheet-header .ant-btn-primary:hover {
+  background-color: #1557b0;
+  border-color: #1557b0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sheet-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .sheet-header h3 {
+    font-size: 18px;
+  }
+  
+  .sheet-table {
+    font-size: 12px;
+  }
+  
+  .sheet-table .ant-table-thead > tr > th,
+  .sheet-table .ant-table-tbody > tr > td {
+    padding: 6px 4px;
+  }
+}
+
+/* Selection highlighting (similar to Google Sheets) */
+.sheet-table .ant-table-tbody > tr.selected > td {
+  background-color: rgba(26, 115, 232, 0.1) !important;
+}
+
+.sheet-table .ant-table-tbody > tr > td.selected {
+  background-color: rgba(26, 115, 232, 0.1) !important;
+  border: 2px solid #1a73e8 !important;
+}
+
+/* Resize handle styling */
+.resize-handle {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.resize-handle:hover {
+  background-color: rgba(26, 115, 232, 0.1);
+}
+
+/* Loading and empty states */
+.sheet-empty {
+  padding: 40px;
+  text-align: center;
+  color: #5f6368;
+  font-style: italic;
+}
+
+.sheet-loading {
+  padding: 40px;
+  text-align: center;
+}
+
+/* Animation for row/column addition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sheet-table .ant-table-tbody > tr:last-child > td,
+.sheet-table .ant-table-thead > tr > th:last-child {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Focus indicators for accessibility */
+.sheet-table .ant-table-tbody > tr > td:focus-within {
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+}
+
+.column-header:focus-within {
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .sheet-table .ant-table-tbody > tr > td {
+    border-color: #000000;
+  }
+  
+  .cell-display:hover {
+    border-color: #000000;
+  }
+  
+  .cell-input {
+    border-color: #000000 !important;
+  }
+}

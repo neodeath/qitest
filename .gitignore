@@ -1,0 +1,16 @@
+# React Components Build Artifacts
+react-components/node_modules/
+react-components/dist/
+react-components/.env
+react-components/.env.local
+react-components/.env.development.local
+react-components/.env.test.local
+react-components/.env.production.local
+react-components/npm-debug.log*
+react-components/yarn-debug.log*
+react-components/yarn-error.log*
+
+# Runtime files
+*.log
+*.tmp
+/tmp/
